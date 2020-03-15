@@ -11,7 +11,7 @@ ENV HASURA_GRAPHQL_ADMIN_SECRET=$GRAPHQL_ADMIN_SECRET
 
 # Change $DATABASE_URL to your heroku postgres URL if you're not using
 # the primary postgres instance in your app
-CMD HASURA_GRAPHQL_ADMIN_SECRET=$GRAPHQL_ADMIN_SECRET graphql-engine \
+CMD echo $GRAPHQL_ADMIN_SECRET && HASURA_GRAPHQL_ADMIN_SECRET=$GRAPHQL_ADMIN_SECRET graphql-engine \
     --database-url $DATABASE_URL \
     serve \
     --server-port $PORT
