@@ -4,7 +4,6 @@ FROM hasura/graphql-engine:v1.1.0
 ENV HASURA_GRAPHQL_ENABLE_CONSOLE=true
 ENV HASURA_GRAPHQL_CORS_DOMAIN="*"
 ENV HASURA_GRAPHQL_UNAUTHORIZED_ROLE=anonymous
-ENV HASURA_GRAPHQL_ADMIN_SECRET=$GRAPHQL_ADMIN_SECRET
 
 # uncomment to enable firebase auth
 #ENV HASURA_GRAPHQL_JWT_SECRET='{"type":"RS256","jwk_url":"https://www.googleapis.com/service_accounts/v1/jwk/securetoken@system.gserviceaccount.com","audience":"creative-store-authentication","issuer":"https://securetoken.google.com/creative-store-authentication"}'
