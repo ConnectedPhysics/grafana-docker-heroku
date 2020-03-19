@@ -5,13 +5,12 @@ ENV HASURA_GRAPHQL_ENABLE_CONSOLE=true
 ENV HASURA_GRAPHQL_CORS_DOMAIN="*"
 ENV HASURA_GRAPHQL_UNAUTHORIZED_ROLE=anonymous
 
-# uncomment to enable firebase auth
-#ENV HASURA_GRAPHQL_JWT_SECRET='{"type":"RS256","jwk_url":"https://www.googleapis.com/service_accounts/v1/jwk/securetoken@system.gserviceaccount.com","audience":"creative-store-authentication","issuer":"https://securetoken.google.com/creative-store-authentication"}'
-
 # Change $DATABASE_URL to your heroku postgres URL if you're not using
 # the primary postgres instance in your app
-CMD HASURA_GRAPHQL_ADMIN_SECRET=$GRAPHQL_ADMIN_SECRET HASURA_GRAPHQL_JWT_SECRET=$GRAPHQL_JWT_SECRET graphql-engine \
+CMD graphql-engine \
     --database-url $DATABASE_URL \
+    --admin-secret $GRAPHQL_ADMIN_SECRET \
+    --jwt-secret $GRAPHQL_JWT_SECRET \
     serve \
     --server-port $PORT
 
