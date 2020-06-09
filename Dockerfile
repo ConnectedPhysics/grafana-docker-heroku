@@ -10,7 +10,7 @@ CMD graphql-engine \
     --jwt-secret $GRAPHQL_JWT_SECRET \
     --enable-console \
     --unauthorized-role anonymous \
-    --cors-domain *
+    --cors-domain
 
 ## Comment the command above and use the command below to
 ## enable an access-key and an auth-hook
