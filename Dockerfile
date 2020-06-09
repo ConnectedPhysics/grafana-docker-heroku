@@ -8,7 +8,7 @@ CMD graphql-engine \
     --server-port $PORT \
     --admin-secret $GRAPHQL_ADMIN_SECRET \
     --jwt-secret $GRAPHQL_JWT_SECRET \
-    --enable-console true \
+    --enable-console \
     --unauthorized-role anonymous \
     --cors-domain *
 
