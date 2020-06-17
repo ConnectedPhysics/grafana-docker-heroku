@@ -1,1 +1,4 @@
-FROM grafana/grafana:7.0.0
+FROM grafana/grafana:7.0.3
+
+ENV GF_DATABASE_URL=$DATABASE_URL
+ENV GF_SERVER_HTTP_PORT=$PORT
